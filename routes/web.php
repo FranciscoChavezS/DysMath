@@ -44,6 +44,9 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/playlist', [App\Http\Controllers\PlaylistController::class, 'index'])->name('playlist');
     
     Route::post('/add-to-playlist/{id}', [PlaylistController::class,'addToCart'])->name('playlist.addToCart');
+
+    Route::get('/juegos', [App\Http\Controllers\GameController::class, 'index'])->name('juegos');
+
     
 
 });

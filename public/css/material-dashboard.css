@@ -83,6 +83,56 @@ h6 {
   margin-bottom: 0.5rem;
 }
 
+/*Estilos de SUMA*/
+
+.container1{
+	background-color: #f8c433;
+	max-width: 700px;
+	margin: auto;
+	border: 2px solid #000;
+	border-radius: 20px;
+	display: flex;
+	padding: 50px 0;
+}
+.izquierdo1{
+	width: 400px;
+	font-size: 62px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.derecha1{
+	width: 30%;
+}
+.msj1{
+	font-size: 40px;
+	height: 50px;
+}
+.derecha1{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.opcion1{
+	width: 60px;
+	height: 60px;
+	border: 1px solid  #000;
+	font-size: 40px;
+	margin-bottom: 20px;
+	border-radius: 50%;
+	cursor: pointer;
+	background-color: #000;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.opcion1:hover{
+	background-color: #262626;
+}
+
+/*FIN Estilos de SUMA*/
 p {
   margin-top: 0;
   margin-bottom: 1rem;
@@ -404,6 +454,7 @@ template {
   .container {
     min-width: 992px !important;
   }
+  
   .navbar {
     display: none;
   }

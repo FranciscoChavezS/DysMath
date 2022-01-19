@@ -27,24 +27,29 @@
         
         <div class="collapse show" id="laravelExample">
           <ul class="nav">
+          <li class="nav-item{{ $activePage == 'juegos' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('juegos') }}">
+                <span class="sidebar-mini"> G </span>
+                <span class="sidebar-normal"> {{ __('Juegos') }} </span>
+              </a>
+            </li>
             <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
               <a class="nav-link" href="{{ route('perfil') }}">
-                <span class="sidebar-mini"> PE </span>
+                <span class="sidebar-mini"> P </span>
                 <span class="sidebar-normal">{{ __('Perfil') }} </span>
               </a>
             </li>
-            
             <li class="nav-item{{ $activePage == 'playlist' ? ' active' : '' }}">
               <a class="nav-link" href="{{ route('playlist') }}">
-                <span class="sidebar-mini"> PL </span>
-                <span class="sidebar-normal"> {{ __('Playlist') }} </span>
+                <span class="sidebar-mini"> CA </span>
+                <span class="sidebar-normal"> {{ __('Calificación') }} </span>
               </a>
             </li>
             @can('posts.index')
             <li class="nav-item{{ $activePage == 'posts' ? ' active' : '' }}">
               <a class="nav-link" href="{{ route('posts.index') }}">
                 <i class="material-icons">library_books</i>
-                <p>{{ __('Subir Canción') }}</p>
+                <p>{{ __('Subir Actividad') }}</p>
               </a>
             </li>
             @endcan
