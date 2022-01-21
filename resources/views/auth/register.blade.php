@@ -8,7 +8,7 @@
                 @csrf
 
                 <div class="card card-login card-hidden mb-3">
-                    <div class="card-header card-header-danger text-center">
+                    <div class="card-header card-header-warning text-center" id="card-header-color">
                         <h4 class="card-title"><strong>{{ __('Registro') }}</strong></h4>
                         <div class="social-line">
                             <a href="#pablo" class="btn btn-just-icon btn-link btn-white">

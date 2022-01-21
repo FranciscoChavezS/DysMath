@@ -13,4 +13,10 @@ class GameController extends Controller
         $users = User::paginate(10);
         return view('Games.juegos', compact('users'));
     }
+
+    public function suma()
+    {
+        $post = Post::paginate(10);
+        return view('Games.suma', compact('post'));
+    }
 }

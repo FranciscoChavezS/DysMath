@@ -46,7 +46,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/add-to-playlist/{id}', [PlaylistController::class,'addToCart'])->name('playlist.addToCart');
 
     Route::get('/juegos', [App\Http\Controllers\GameController::class, 'index'])->name('juegos');
+    Route::get('/suma', [App\Http\Controllers\GameController::class, 'suma'])->name('suma');
 
-    
 
 });

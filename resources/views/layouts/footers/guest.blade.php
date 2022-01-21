@@ -29,7 +29,7 @@
         <script>
             document.write(new Date().getFullYear())
         </script>, Creado <i class="material-icons">favorite</i> por
-        <a href="http://www.cucei.udg.mx/" target="_blank">Los del X</a>
+        <a href="http://www.cucei.udg.mx/" target="_blank">Equipo de Modular</a>
         </div>
     </div>
 </footer>
