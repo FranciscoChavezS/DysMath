@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PlaylistController;
+use Laravel\Socialite\Facades\Socialite;
+
 
 
 /*
@@ -48,5 +50,10 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/juegos', [App\Http\Controllers\GameController::class, 'index'])->name('juegos');
     Route::get('/suma', [App\Http\Controllers\GameController::class, 'suma'])->name('suma');
 
-
 });
+
+Route::get('auth/facebook', [App\Http\Controllers\FaceBookController::class, 'redirectFacebook']);
+Route::get('auth/facebook/callback', [App\Http\Controllers\FaceBookController::class, 'callbackFacebook']);
+
+Route::get('/.well-known/pki-validation/{file}', [App\Http\Controllers\PagesController::class, 'getDownload']);
+

@@ -18,10 +18,9 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('foto')->nullable();
             $table->date('fecha');
-            $table->string('genero');
-            $table->string('artista');
-            $table->string('cancion')->nullable();
-            $table->foreignId('user_id')->constrained(); //llave foranea
+            $table->string('descripcion');
+            $table->string('tema');
+            $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade'); //llave foranea
             $table->timestamps();
         });
     }

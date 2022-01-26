@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        //Creamos un registro que será el predeterminado para asignarle un rol de administrador o de artista
+        //Creamos un registro que será el predeterminado para asignarle un rol de administrador 
         User::create([
             'name' => 'admin',
             'username' => 'admin',

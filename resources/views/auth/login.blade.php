@@ -14,7 +14,7 @@
                     <div class="card-header card-header-warning text-center" id="card-header-color" >
                         <h4 class="card-title"><strong>{{ __('Iniciar Sesión') }}</strong></h4>
                         <div class="social-line">
-                            <a href="#" class="btn btn-just-icon btn-link btn-white">
+                            <a href="{{ url('auth/facebook') }}" class="btn btn-just-icon btn-link btn-white">
                                 <i class="fa fa-facebook-square"></i>
                             </a>
                             <a href="#" class="btn btn-just-icon btn-link btn-white">

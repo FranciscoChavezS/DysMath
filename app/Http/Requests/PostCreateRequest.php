@@ -27,9 +27,8 @@ class PostCreateRequest extends FormRequest
             'title' => 'required',
             'foto' => 'required',
             'fecha' => 'required',
-            'genero' => 'required',
-            'artista' => 'required',
-            'cancion' => 'required'
+            'descripcion' => 'required',
+            'tema' => 'required'
         ];
     }
     public function messages()
@@ -38,9 +37,8 @@ class PostCreateRequest extends FormRequest
             'title.required' => 'El campo nombre es requerido',
             'foto.required' => 'El campo foto es requerido',
             'fecha.required' => 'El campo fecha es obligatorio',
-            'genero.required' => 'El campo genero es requerido',
-            'artista.required' => 'El campo artista es requerido',
-            'cancion.required' => 'El campo cancion es requerido'
+            'descripcion.required' => 'El campo descripcion es requerido',
+            'tema.required' => 'El campo tema es requerido'
         ];
     }
 }

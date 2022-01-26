@@ -10,12 +10,12 @@
       {{ __('DYSMATH') }}
     </a>
   </div>
-  <div class="sidebar-wrapper">
+  <div class="sidebar-wrapper" >
     <ul class="nav">
-      <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('home') }}">
+      <li class="nav-item{{ $activePage == 'juegos' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('juegos') }}">
           <i class="material-icons">dashboard</i>
-            <p>{{ __('Home') }}</p>
+            <p>{{ __('Tablero') }}</p>
         </a>
       </li>
       <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
@@ -28,8 +28,8 @@
         
         <div class="collapse show" id="laravelExample">
           <ul class="nav">
-          <li class="nav-item{{ $activePage == 'juegos' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('juegos') }}">
+          <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('home') }}">
                 <span class="sidebar-mini"> G </span>
                 <span class="sidebar-normal"> {{ __('Juegos') }} </span>
               </a>

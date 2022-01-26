@@ -46,18 +46,8 @@ class PlaylistController extends Controller
 
         $post->title = $request->title;
         $post->fecha = $request->fecha;
-        $post->genero = $request->genero;
-        $post->artista = $request->artista;
-        //$post->cancion = $request->cancion;
-
-       //Guardar ruta de canción a la BD
-       if($request->hasFile('cancion')){
-        $file1 = $request->file('cancion');
-        $destinationPath1 = 'images/media/'; //asignamos la carpeta 
-        $filename1 = time().'-'.$file1->getClientOriginalName(); //recuperar el nombre original del archivo
-        $uploadSuccess = $request->file('cancion')->move($destinationPath1, $filename1); //la canción cargada la movemos a la carpeta y guardamos la url en la DB
-        $post->cancion = $destinationPath1 . $filename1;
-        }
+        $post->descripcion = $request->descripcion;
+        $post->tema = $request->tema;
 
         //Guardar ruta de imagen en BD 
         if($request->hasFile('foto')){
@@ -117,19 +107,9 @@ class PlaylistController extends Controller
         
         $post->title = $request->title;
         $post->fecha = $request->fecha;
-        $post->genero = $request->genero;
-        $post->artista = $request->artista;
-        //$post->cancion = $request->cancion;
+        $post->descripcion = $request->descripcion;
+        $post->tema = $request->tema;
 
-        //Actualizar canción en BD 
-        if($request->hasFile('cancion')){
-            $file1 = $request->file('cancion');
-            $destinationPath1 = 'images/media/'; //asignamos la carpeta 
-            $filename1 = time().'-'.$file1->getClientOriginalName(); //recuperar el nombre original del archivo
-            $uploadSuccess = $request->file('cancion')->move($destinationPath1, $filename1); //la canción cargada la movemos a la carpeta y guardamos la url en la DB
-            $post->cancion = $destinationPath1 . $filename1;
-        }
-        
         //Actualizar foto
         if($request->hasFile('foto')){
             $file = $request->file('foto');
@@ -181,10 +161,9 @@ class PlaylistController extends Controller
                     "title" => $post->title,
                     "foto" => $post->foto,
                     "fecha" => $post->fecha,
-                    "genero" => $post->genero,
-                    "artista" => $post->artista,
+                    "descripcion" => $post->descripcion,
+                    "tema" => $post->tema,
                     "quantity" => 1,
-                    "cancion" => $post->cancion,
                 ]
             ];
             session()->put('cart', $cart);
@@ -203,10 +182,9 @@ class PlaylistController extends Controller
             "title" => $post->title,
             "foto" => $post->foto,
             "fecha" => $post->fecha,
-            "genero" => $post->genero,
-            "artista" => $post->artista,
+            "descripcion" => $post->descripcion,
+            "tema" => $post->tema,
             "quantity" => 1,
-            "cancion" => $post->cancion,
         ];
         
         session()->put('cart', $cart);

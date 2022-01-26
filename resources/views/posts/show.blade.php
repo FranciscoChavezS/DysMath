@@ -39,12 +39,9 @@
                           {{ $post->title }} <br>
                           {{ $post->foto }} <br> -->
                           Fecha: {{ $post->fecha }} <br>
-                          Genero: {{ $post->genero }} <br>
-                          Artista: {{ $post->artista }} <br>
+                          Descripción: {{ $post->descripcion }} <br>
+                          Tema: {{ $post->tema }} <br>
                           Creación de post: {{ $post->created_at }}
-                        <audio controls style="width: 250px;">
-                          <source src="{{ asset($post->cancion)}}" type="audio/mp3">
-                        </audio>
                     
                         </p>
                       </div>

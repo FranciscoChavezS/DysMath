@@ -13,25 +13,24 @@
             @endif
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">MÚSICA</h4>
-            <p class="card-category">Lista de canciones registradas </p>
+            <h4 class="card-title">Actividades</h4>
+            <p class="card-category">Lista de actividades registradas </p>
           </div>
           <div class="card-body">
             <div class="row">
               <div class="col-12 text-right">
-                <a href="{{ route('posts.create') }}" class="btn btn-sm btn-facebook">Añadir canción</a>
+                <a href="{{ route('posts.create') }}" class="btn btn-sm btn-facebook">Subir Actividad</a>
               </div>
             </div>
             <div class="table-responsive">
               <table class="table ">
                 <thead class="text-primary">
                   <th> ID </th>
-                  <th> Título </th>
+                  <th> Titulo </th>
                   <th> Foto </th>
                   <th> Fecha </th>
-                  <th> Género</th>
-                  <th> Artista </th>
-                  <th> Reproducir </th>
+                  <th> Descripción </th>
+                  <th> Tema </th>
                   <th> Fecha de creación </th>
                   <th> Usuario </th>
                   <th class="text-right"> Acciones </th>
@@ -45,14 +44,8 @@
                       <img src="{{ asset($post->foto)}}" class="img-fluid img-thumbnail" width="120">
                     </td>
                     <td>{{ $post->fecha }}</td>
-                    <td>{{ $post->genero }}</td>
-                    <td>{{ $post->artista }}</td>
-                    <td>
-                      <audio controls style="width: 200px;">
-                        <source src="{{ asset($post->cancion)}}" type="audio/mp3">
-                      </audio>
-                    </td>
-
+                    <td>{{ $post->descripcion }}</td>
+                    <td>{{ $post->tema }}</td>
                     <td class="text-primary">{{ $post->created_at->toFormattedDateString() }}</td>
                     <td>{{ $post->user->name }}</td>
                     <td class="td-actions text-right">

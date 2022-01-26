@@ -30,10 +30,10 @@ class HomeController extends Controller
         //Método para hacer busqueda de posts 
         $search=trim($request->get('search')); //eliminar espacios en blanco del buscador
         $posts=DB::table('posts') //utilizamos facade DB
-            ->select('id','title','foto','fecha','genero','artista','cancion','created_at') //hacemos un select de los datos que queremos que se muestren
+            ->select('id','title','foto','fecha','descripcion','tema','created_at') //hacemos un select de los datos que queremos que se muestren
             ->where('title','LIKE','%'.$search.'%') //Con Like hacemos que busque todas las coicidentes con la busqueda
-            ->orWhere('genero','LIKE','%'.$search.'%') // buscar también por genero
-            ->orWhere('artista','LIKE','%'.$search.'%') //Buscar por artista
+            ->orWhere('descripcion','LIKE','%'.$search.'%') // buscar también por genero
+            ->orWhere('tema','LIKE','%'.$search.'%') //Buscar por artista
             ->orderBy('title','asc') //Ordenar de forma ascendente el title (nombre de canción)
             ->paginate(6); //paginación 
         return view('home', compact('posts','search'));

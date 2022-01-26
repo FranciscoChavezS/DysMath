@@ -1,4 +1,4 @@
-@extends('layouts.main', ['activePage' => 'playlist', 'titlePage' => __('Lista de reproducción!')])
+@extends('layouts.main', ['activePage' => 'playlist', 'titlePage' => __('Calificaciones!')])
 
 @section('content')
 <div class="content">
@@ -8,8 +8,8 @@
       <!-- Mostrar mensaje en post-->
       <div class="card">
           <div class="card-header card-header-danger">
-            <h4 class="card-title">MÚSICA</h4>
-            <p class="card-category">Lista de reproducción </p>
+            <h4 class="card-title">Calificación</h4>
+            <p class="card-category">Notas </p>
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -18,9 +18,8 @@
                   <th> Título </th>
                   <th> Foto </th>
                   <th> Fecha </th>
-                  <th> Género</th>
-                  <th> Artista </th>
-                  <th> Reproducir </th>
+                  <th> Descripción</th>
+                  <th> Tema </th>
                   <th class="text-right"> Acciones </th>
                 </thead>
                 <tbody>
@@ -31,13 +30,8 @@
                       <img src="{{ asset($post->foto)}}" class="img-fluid img-thumbnail" width="120">
                     </td>
                     <td>{{ $post->fecha }}</td>
-                    <td>{{ $post->genero }}</td>
-                    <td>{{ $post->artista }}</td>
-                    <td>
-                      <audio controls style="width: 450px;">
-                        <source src="{{ asset($post->cancion)}}" type="audio/mp3">
-                      </audio>
-                    </td>
+                    <td>{{ $post->descripcion }}</td>
+                    <td>{{ $post->tema }}</td>
 
                     <td class="td-actions text-right">
                       <form action="{{ route('posts.destroy', $post->id) }}" method="post"

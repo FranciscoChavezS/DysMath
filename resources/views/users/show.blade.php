@@ -1,4 +1,4 @@
-@extends('layouts.main', ['activePage' => 'users', 'titlePage' => 'Detalles del usuario'])
+@extends('layouts.main', ['activePage' => 'sss', 'titlePage' => 'Detalles del usuario'])
 @section('content')
 <div class="content">
   <div class="container-fluid">
@@ -22,8 +22,13 @@
                 <div class="col-md-4 mb-3">
                   <div class="card">
                     <div class="card-body">
-                      <div class="d-flex flex-column align-items-center text-center">
+                      <div class="d-flex flex-column align-items-center text-center">   
+                      @auth()
+                      @if(Auth::user()->id == $user->id)                     
                         <img src="/images/perfil/{{ Auth::user()->avatar}}" alt="Admin" class="rounded-circle" width="150">
+                        @else
+                          <img src="/images/perfil/default-avatar.png" alt="Admin" class="rounded-circle" width="150">
+                        @endif
                         <form action="{{ route('perfil') }}" enctype="multipart/form-data" method="POST">
                             @csrf
                             <label>Actualizar foto</label>
@@ -31,6 +36,7 @@
                           <div class="mt-3">
                           <input type="submit" class="btn btn-primary" value="Cambiar">
                         </form>
+                        @endauth
                         </div>
                       </div>
                     </div>

@@ -10,16 +10,16 @@
           <div class="card ">
             <!--Header-->
             <div class="card-header card-header-primary">
-              <h4 class="card-title">MÚSICA</h4>
-              <p class="card-category">Resgistrar canción</p>
+              <h4 class="card-title">Actividad</h4>
+              <p class="card-category">Publicar Actividad</p>
             </div>
             <!--End header-->
             <!--Body-->
             <div class="card-body">
               <div class="row">
-                <label for="title" class="col-sm-2 col-form-label">Nombre</label>
+                <label for="title" class="col-sm-2 col-form-label">Titulo</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control" name="title" placeholder="Ingrese el nombre de la canción"
+                  <input type="text" class="form-control" name="title" placeholder="Ingrese el titulo de la actividad"
                     autocomplete="off" autofocus>
                     <!--Validaciones-->
                     @if($errors->has('title'))
@@ -49,35 +49,26 @@
                 </div>
               </div>
               <div class="row">
-                <label for="genero" class="col-sm-2 col-form-label">Género</label>
+                <label for="descripcion" class="col-sm-2 col-form-label">Descripción</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control" name="genero" placeholder="Ingrese el genero"
+                  <input type="text" class="form-control" name="descripcion" placeholder="Ingrese el descripcion"
                     autocomplete="off" autofocus>
                     <!--Validaciones-->
-                    @if($errors->has('genero'))
-                      <span class="error text-danger" for="input-name">{{ $errors->first('genero') }}</span>
+                    @if($errors->has('descripcion'))
+                      <span class="error text-danger" for="input-name">{{ $errors->first('descripcion') }}</span>
                     @endif
                 </div>
               </div>
               <div class="row">
-                <label for="artista" class="col-sm-2 col-form-label">Artista</label>
+                <label for="tema" class="col-sm-2 col-form-label">Seleccione tema</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control" name="artista" placeholder="Ingrese la artista"
-                    autocomplete="off" autofocus>
+                    <select class='form-control' name="tema" id="tema" >
+                      <option value="{{ route('suma') }}">Suma</option>
+                      <option value='Resta'>Resta</option>
+                    </select>
                     <!--Validaciones-->
-                    @if($errors->has('artista'))
-                      <span class="error text-danger" for="input-name">{{ $errors->first('artista') }}</span>
-                    @endif
-                </div>
-              </div>
-              <div class="row">
-                <label for="cancion" class="col-sm-2 col-form-label">Canción</label>
-                <div class="col-sm-7">
-                  <input type="file" class="form-control" name="cancion"
-                    autocomplete="off" accept=".mp3"> <!--Validamos que solo acepte archivos tipo mp3 -->
-                    <!--Validaciones-->
-                    @if($errors->has('cancion'))
-                      <span class="error text-danger" for="input-name">{{ $errors->first('cancion') }}</span>
+                    @if($errors->has('tema'))
+                      <span class="error text-danger" for="input-name">{{ $errors->first('tema') }}</span>
                     @endif
                 </div>
               </div>

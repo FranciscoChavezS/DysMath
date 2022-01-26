@@ -11,8 +11,8 @@
           <div class="card">
             <!--Header-->
             <div class="card-header card-header-primary">
-              <h4 class="card-title">Editar canción</h4>
-              <p class="card-category">Editar datos del post</p>
+              <h4 class="card-title">Editar Actividad</h4>
+              <p class="card-category">Editar datos de la Actividad</p>
             </div>
             <!--End header-->
             <!--Body-->
@@ -20,7 +20,7 @@
               <div class="row">
                 <label for="title" class="col-sm-2 col-form-label">Titulo</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control" name="title" placeholder="Ingrese el nombre"
+                  <input type="text" class="form-control" name="title" placeholder="Ingrese el titulo"
                     value="{{ old('title', $post->title) ?? ''}}" autocomplete="off" autofocus>
                     <!--Validaciones-->
                     @if($errors->has('title'))
@@ -51,35 +51,26 @@
                 </div>
               </div>
               <div class="row">
-                <label for="genero" class="col-sm-2 col-form-label">Género</label>
+                <label for="descripcion" class="col-sm-2 col-form-label">Descripción</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control" name="genero" placeholder="Ingrese el genero"
-                    value="{{ old('genero', $post->genero) ?? ''}}" autocomplete="off" autofocus>
+                  <input type="text" class="form-control" name="descripcion" placeholder="Ingrese la descripcion"
+                    value="{{ old('descripcion', $post->descripcion) ?? ''}}" autocomplete="off" autofocus>
                     <!--Validaciones-->
-                    @if($errors->has('genero'))
-                      <span class="error text-danger" for="input-name">{{ $errors->first('genero') }}</span>
+                    @if($errors->has('descripcion'))
+                      <span class="error text-danger" for="input-name">{{ $errors->first('descripcion') }}</span>
                     @endif
                 </div>
               </div>
               <div class="row">
-                <label for="artista" class="col-sm-2 col-form-label">Artista</label>
+                <label for="tema" class="col-sm-2 col-form-label">Elegir Actividad</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control" name="artista" placeholder="Ingrese la artista"
-                    value="{{ old('artista', $post->artista) ?? ''}}" autocomplete="off" autofocus >
+                    <select class='form-control' name="tema" id="tema" >
+                      <option value="{{ route('suma') }}">Suma</option>
+                      <option value='Resta'>Resta</option>
+                    </select>
                     <!--Validaciones-->
-                    @if($errors->has('artista'))
-                      <span class="error text-danger" for="input-name">{{ $errors->first('artista') }}</span>
-                    @endif
-                </div>
-              </div>
-              <div class="row">
-                <label for="cancion" class="col-sm-2 col-form-label">Canción</label>
-                <div class="col-sm-7">
-                  <input type="file" class="form-control" name="cancion" 
-                    value="{{ old('cancion', $post->cancion) ?? ''}}" autofocus accept=".mp3"> <!--Validar solo archivos mp3-->
-                    <!--Validaciones-->
-                    @if($errors->has('cancion'))
-                      <span class="error text-danger" for="input-name">{{ $errors->first('cancion') }}</span>
+                    @if($errors->has('tema'))
+                      <span class="error text-danger" for="input-name">{{ $errors->first('tema') }}</span>
                     @endif
                 </div>
               </div>

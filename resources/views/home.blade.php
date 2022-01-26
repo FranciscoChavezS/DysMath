@@ -1,4 +1,4 @@
-@extends('layouts.main', ['activePage' => 'dashboard', 'titlePage' => __('¡Recomendado para ti!')])
+@extends('layouts.main', ['activePage' => 'dashboard', 'titlePage' => __('Acividades para ti')])
 
 @section('content')
 <div class="content">
@@ -18,26 +18,14 @@
                 <div class="card-body">
                   <small class="card-txt-category">Fecha: {{ $post->fecha }}</small>
                   <h3 class="card-title my-2">{{ $post->title }}</h3>
-                  <h5 class="card-title my-2">Genero: {{ $post->genero }}</h5>
-                  <a href="{{ route('posts.index', $post->id) }}" class="post-link"><b>Artista: {{ $post->artista }}</b></a>
+                  <h5 class="card-title my-2">Descripcion: {{ $post->descripcion }}</h5>
                   <hr>
                   <div class="d-card-text">
-                  <audio controls style="width: 250px;">
-                        <source src="{{ asset($post->cancion)}}" type="audio/mp3">
-                  </audio>
                 </div>
-                  <hr>
                   <div class="row">
                     <div class="col-6 text-right">
                       <div class="card-footer ml-auto mr-auto">
-                      <form method="POST" action="{{ route('playlist.addToCart', $post->id) }}" enctype="multipart/form-data">
-                        @csrf
-                          <input type="hidden" name="title"  value="{{ old('title', $post->title) ?? ''}}">
-                          <input type="hidden" name="fecha" value="{{ old('fecha', $post->fecha) ?? ''}}">
-                          <input type="hidden" name="genero"  value="{{ old('genero', $post->genero) ?? ''}}">
-                          <input type="hidden" name="artista"  value="{{ old('artista', $post->artista) ?? ''}}">
-                        <button type="submit" class="btn btn-outline-success">Agregar Playlist</button>
-                        </form>
+                        <a href="{{ $post->tema }}" class="post-link"><button type="submit" class="btn btn-success btn-lg" style="width: 15rem;">Hacer Actividad</button>
                       </div>
                     </div>
                   </div>
