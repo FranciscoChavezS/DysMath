@@ -15,6 +15,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -172,7 +173,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{{ asset('img/guero.jpg')}}" alt="..." />
+                            <img class="img-fluid" src="{{ asset('img/default-avatar.png')}}" alt="..." />
                         </div>
                     </div>
                     <!-- Portfolio Item 2-->
@@ -181,7 +182,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{{ asset('img/jessica.jpg')}}" alt="..." />
+                            <img class="img-fluid" src="{{ asset('img/default-avatar.png')}}" alt="..." />
                         </div>
                     </div>
                     <!-- Portfolio Item 3-->
@@ -190,7 +191,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{{ asset('img/daniel.jpeg')}}" alt="..." />
+                            <img class="img-fluid" src="{{ asset('img/default-avatar.png')}}" alt="..." />
                         </div>
                     </div>
                    
@@ -371,6 +372,7 @@
                 </div>
             </div>
         </div>
+        
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

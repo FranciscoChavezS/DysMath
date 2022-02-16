@@ -10,8 +10,8 @@ class GameController extends Controller
 {
     public function index()
     {
-        $users = User::paginate(10);
-        return view('Games.juegos', compact('users'));
+        $posts = Post::with(['user'])->paginate(10);
+        return view('Games.juegos', compact('posts'));
     }
 
     public function suma()

@@ -12,10 +12,10 @@
   </div>
   <div class="sidebar-wrapper" >
     <ul class="nav">
-      <li class="nav-item{{ $activePage == 'juegos' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('juegos') }}">
+      <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('home') }}">
           <i class="material-icons">dashboard</i>
-            <p>{{ __('Tablero') }}</p>
+            <p>{{ __('Dashboard') }}</p>
         </a>
       </li>
       <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
@@ -28,8 +28,8 @@
         
         <div class="collapse show" id="laravelExample">
           <ul class="nav">
-          <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('home') }}">
+          <li class="nav-item{{ $activePage == 'juegos' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('juegos') }}">
                 <span class="sidebar-mini"> G </span>
                 <span class="sidebar-normal"> {{ __('Juegos') }} </span>
               </a>
@@ -40,10 +40,10 @@
                 <span class="sidebar-normal">{{ __('Perfil') }} </span>
               </a>
             </li>
-            <li class="nav-item{{ $activePage == 'playlist' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('playlist') }}">
+            <li class="nav-item{{ $activePage == 'botman' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('perfil') }}">
                 <span class="sidebar-mini"> CA </span>
-                <span class="sidebar-normal"> {{ __('Calificación') }} </span>
+                <span class="sidebar-normal"> {{ __('Chatbot') }} </span>
               </a>
             </li>
             @can('posts.index')
